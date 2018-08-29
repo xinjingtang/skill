@@ -7,7 +7,7 @@
         <id column="id" property="id" />
         <result column="name" property="name" />
         <result column="age" property="age"/>
-        <collection column="id" property="jobs" select="selectJobByJobId"/>
+        <collection column="age" property="jobs" select="selectJobByJobId"/>
     </resultMap>
 
     <resultMap id="JobResultMap" type="com.group.integrate.domain.Job">
@@ -21,7 +21,7 @@
     </select>
 
     <select id="selectJobByJobId" resultMap="JobResultMap">
-        SELECT * FROM `job` j WHERE j.id = #{id};
+        SELECT * FROM `job` j WHERE j.job_name = #{age};
     </select>
 
 

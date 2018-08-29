@@ -57,6 +57,7 @@ public class PersonService {
         return person;
     }
 
+    @Cacheable(keyGenerator = "keyGenerator")
     public PersonDTO selectPersonById(int id){
         PersonDTO person = personMapper.selectByPersonId(id);
         return person;

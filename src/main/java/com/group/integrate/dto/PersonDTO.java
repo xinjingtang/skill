@@ -1,12 +1,9 @@
-package com.group.integrate.domain;
+package com.group.integrate.dto;
 
-import com.baomidou.mybatisplus.annotations.TableField;
-import com.baomidou.mybatisplus.annotations.TableId;
-import com.baomidou.mybatisplus.annotations.TableName;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.group.integrate.domain.Job;
 import lombok.Data;
-import org.springframework.data.annotation.Transient;
 
 import java.io.Serializable;
 import java.util.HashSet;
@@ -18,24 +15,17 @@ import java.util.Set;
  * </p>
  *
  * @author xinjing.tang
- * @since 2018/8/14.
+ * @since 2018/8/28.
  */
 @Data
-@TableName("person")
-public class Person implements Serializable {
+public class PersonDTO implements Serializable{
 
-    @TableId(value = "id")
-    @TableField(value = "id")
     private Integer id;
 
-    @TableField(value = "name")
     private String name;
 
-    @TableField(value = "age")
     private Integer age;
 
-    @TableField(exist = false)
-//    @Transient
     private Set<Job> jobs = new HashSet<>();
 
     @Override
@@ -47,4 +37,5 @@ public class Person implements Serializable {
         }
         return null;
     }
+
 }

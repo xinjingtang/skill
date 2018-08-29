@@ -31,6 +31,12 @@ public class PersonResource {
     @Autowired
     private PersonService personService;
 
+    /**
+     * 接口方法上通过注解写sql
+     * @param id
+     * @return Person
+     * @throws URISyntaxException
+     */
     @RequestMapping("/show/person/{id}")
      public ResponseEntity<Person> selectPerson (@PathVariable int id) throws URISyntaxException {
 
@@ -43,6 +49,12 @@ public class PersonResource {
         return ResponseEntity.created(new URI("/showPerson/" +id)).body(personService.selectPerson(id));
      }
 
+    /**
+     * 联表查询，一个person多个job
+     * @param id
+     * @return PersonDTO
+     * @throws URISyntaxException
+     */
     @RequestMapping("/show/person/mapper/{id}")
     public ResponseEntity<PersonDTO> selectPersonById (@PathVariable int id) throws URISyntaxException {
 
@@ -56,19 +68,5 @@ public class PersonResource {
     }
 
 
-    @RequestMapping("/show/exception")
-    public ResponseEntity<Person> excepition (@RequestParam(required = false) Boolean exception ) throws URISyntaxException {
-        if (exception == null ? true : exception){
-            throw new BizException("ceshi");
-        }
-
-        return ResponseEntity.created(new URI("/show/exception" )).body(personService.selectPerson(1));
-    }
-    @RequestMapping("/redis/getKeyValue")
-    public String setKeyValue (@RequestParam String key,@RequestParam String value){
-        Boolean success = personService.setRedisTemplate(key ,value);
-        System.out.println(success);
-        return personService.getRedisValue(key);
-    }
 
 }

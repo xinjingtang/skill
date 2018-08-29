@@ -18,14 +18,14 @@ import java.math.BigInteger;
  */
 @Data
 @TableName(value = "job")
-public class Job{
+public class Job implements Serializable{
 
     @Id
     @TableField(value = "id")
     private BigInteger id;
 
     @TableField(value = "is_primary_job")
-    private String primaryJob;
+    private Boolean primaryJob;
 
     @TableField(value = "job_name")
     private String jobName;
