@@ -21,7 +21,7 @@ public class ExceptionResource {
 
     @RequestMapping("/show/exception")
     public ResponseEntity<Person> excepition (@RequestParam(required = false) Boolean exception ) throws URISyntaxException {
-        if (exception == null ? true : exception){
+        if (exception == true ){
             throw new BizException("ceshi");
         }
 
