@@ -38,8 +38,7 @@ public class PersonService {
     PersonMapper personMapper;
     @Autowired
     Jackson2ObjectMapperBuilder jackson2ObjectMapperBuilder;
-    @Autowired
-    RedisTemplate template;
+
 
 
     @Cacheable(keyGenerator = "keyGenerator")
@@ -63,33 +62,5 @@ public class PersonService {
         return person;
     }
 
-    public Boolean setRedisTemplate(String key ,String value){
-//        template.opsForValue().setIfAbsent()
-        Object obj = template.execute(new RedisCallback() {
-            @Override
-            public Object doInRedis(RedisConnection redisConnection) throws DataAccessException {
-                Boolean b = redisConnection.set(key.getBytes(),value.getBytes());
-                return b;
-            }
-        });
 
-        System.out.print(key);
-        return obj != null ? (Boolean) obj : false;
-    }
-
-    public String getRedisValue (String key){
-        Object obj = template.execute(new RedisCallback() {
-            @Override
-            public Object doInRedis(RedisConnection redisConnection) throws DataAccessException {
-                StringRedisSerializer serializer = new StringRedisSerializer();
-                byte[] b = redisConnection.get(key.getBytes());
-                redisConnection.close();
-                if (b == null) {
-                    return null;
-                }
-                return serializer.deserialize(b);
-            }
-        });
-        return obj != null ? obj.toString() : null;
-    }
 }
