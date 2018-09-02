@@ -1,8 +1,6 @@
 package com.group.integrate.service;
 
-import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.baomidou.mybatisplus.plugins.Page;
-import com.baomidou.mybatisplus.service.IService;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.group.integrate.domain.Person;
@@ -56,7 +54,7 @@ public class PersonService extends ServiceImpl<PersonMapper,Person> implements P
             personString = jackson2ObjectMapperBuilder.build().writeValueAsString(person);
             log.info("personString {}",personString);
         } catch (JsonProcessingException e) {
-            e.printStackTrace();
+            log.info("",e);
         }
 
         return person;
