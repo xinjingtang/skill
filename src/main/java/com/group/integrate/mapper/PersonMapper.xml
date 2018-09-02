@@ -24,6 +24,8 @@
         SELECT * FROM `job` j WHERE j.job_name = #{age};
     </select>
 
-
+    <select id="selectPersonsByPage" resultMap="BaseResultMap">
+        SELECT * FROM `person`
+    </select>
 
 </mapper>

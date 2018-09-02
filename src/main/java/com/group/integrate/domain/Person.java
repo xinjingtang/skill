@@ -3,6 +3,7 @@ package com.group.integrate.domain;
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableName;
+import com.baomidou.mybatisplus.enums.IdType;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Data;
@@ -24,7 +25,7 @@ import java.util.Set;
 @TableName("person")
 public class Person implements Serializable {
 
-    @TableId(value = "id")
+    @TableId(value="id", type= IdType.AUTO)
     @TableField(value = "id")
     private Integer id;
 
@@ -35,7 +36,7 @@ public class Person implements Serializable {
     private Integer age;
 
     @TableField(exist = false)
-//    @Transient
+    @Transient
     private Set<Job> jobs = new HashSet<>();
 
     @Override

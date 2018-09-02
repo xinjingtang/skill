@@ -3,7 +3,9 @@ package com.group.integrate.config;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.cache.CacheProperties;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.cache.annotation.EnableCaching;
@@ -20,6 +22,7 @@ import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
  
 import java.lang.reflect.Method;
+import java.time.Duration;
 import java.util.HashSet;
 import java.util.Set;
  
@@ -29,6 +32,7 @@ import java.util.Set;
  *
  */
 @Configuration
+@Slf4j
 public class RedisConfig extends CachingConfigurerSupport {
  
     @Autowired
@@ -65,6 +69,7 @@ public class RedisConfig extends CachingConfigurerSupport {
             add("codeNameCache");
             add("codeNameCache1");
         }};
+
         builder.initialCacheNames(cacheNames);
         return builder.build();
     }
@@ -100,4 +105,20 @@ public class RedisConfig extends CachingConfigurerSupport {
         redisTemplate.setHashKeySerializer(new StringRedisSerializer());
         return redisTemplate;
     }
+
+    @Bean
+    CacheProperties.Redis redis(){
+        CacheProperties.Redis redis = new CacheProperties.Redis();
+        redis.setTimeToLive(Duration.ofSeconds(20));
+        log.info("**************************");
+        return redis;
+    }
+//    @Bean
+//    CacheProperties cacheProperties(){
+//        CacheProperties.Redis redis = new CacheProperties.Redis();
+//        redis.setTimeToLive(Duration.ofSeconds(20));
+//        log.info("in cacheCacheProperties set time to live ");
+//        CacheProperties cacheProperties = new CacheProperties();
+//        cacheProperties.getRedis();
+//    }
 }
