@@ -21,7 +21,6 @@ import org.springframework.core.io.ResourceLoader;
 import javax.sql.DataSource;
 
 @Configuration
-@MapperScan("com.baomidou.mybatisplus.test.h2.entity.mapper")
 public class MybatisConfigMetaObjOptLockConfig {
 
 

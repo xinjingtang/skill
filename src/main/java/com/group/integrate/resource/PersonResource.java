@@ -3,10 +3,12 @@ package com.group.integrate.resource;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.group.integrate.domain.Person;
 import com.group.integrate.dto.PersonDTO;
+import com.group.integrate.listener.Event;
 import com.group.integrate.service.PersonService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -31,6 +33,8 @@ public class PersonResource {
 
     @Autowired
     private PersonService personService;
+    @Autowired
+    private ApplicationEventPublisher publisher;
 
     /**
      * 接口方法上通过注解写sql
@@ -47,7 +51,9 @@ public class PersonResource {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return ResponseEntity.created(new URI("/showPerson/" +id)).body(personService.selectPerson(id));
+        Person person = personService.selectPerson(id);
+        publisher.publishEvent(new Event(this,person));
+        return ResponseEntity.created(new URI("/showPerson/" +id)).body(person);
      }
 
     /**
