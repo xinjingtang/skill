@@ -19,5 +19,10 @@
             <column name="job_name" type="varchar(36)" remarks="工作名称"></column>
         </createTable>
     </changeSet>
+    <changeSet id="201809141536001" author="xinjing.tang">
+        <sql>
+            alter table job modify column job_name varchar(1000);
+        </sql>
+    </changeSet>
 
 </databaseChangeLog>
