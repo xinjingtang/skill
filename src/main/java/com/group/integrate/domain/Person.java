@@ -48,4 +48,8 @@ public class Person implements Serializable {
         }
         return null;
     }
+    @Override
+    public Person clone (){
+        return this.clone();
+    }
 }

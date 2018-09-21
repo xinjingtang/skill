@@ -9,6 +9,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -24,6 +26,17 @@ public class IntegrateApplicationTests {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+
+	@Test
+	public void testMap(){
+		Map<String , String> hashMap = new HashMap();
+		hashMap.put("tang","xinjing");
+		hashMap.put("mao","zhuxi");
+		hashMap.put("xi","jinping");
+		hashMap.put("liu","shaoqi");
+		hashMap.get("tang");
+
 	}
 
 }
