@@ -25,12 +25,13 @@ public class ResourceAdvice {
     @ExceptionHandler(BizException.class)
     public ResponseEntity<ExceptionDetail> handleBizException(BizException e) {
 //        logRequest(ExceptionErrorCode.VALIDATION_ERROR, e, false);
-        ExceptionDetail detail = new ExceptionDetail();
-        detail.setErrorCode(e.getCode());
 //        String errorMsg = exceptionService.getMessageDetailByCode(e.getCode(), e.getArgs());
 //        detail.setMessage(StringUtils.isEmpty(errorMsg) ? e.getMsg() : errorMsg);
+        ExceptionDetail detail = new ExceptionDetail();
+        detail.setErrorCode(e.getCode());
         detail.setMessage(e.getMessage() == null ? null : e.getMessage());
         detail.setBizErrorCode("BizErrorCode");
+        e.printStackTrace();
         return new ResponseEntity<>(detail, HttpStatus.BAD_REQUEST);
     }
 
