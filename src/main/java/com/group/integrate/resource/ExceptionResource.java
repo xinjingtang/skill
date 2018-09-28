@@ -30,7 +30,7 @@ public class ExceptionResource {
     public ResponseEntity<Person> excepition (@RequestParam(required = false) Boolean exception ) throws URISyntaxException {
 
         if (exception == true ){
-            throw new BizException("ceshi");
+            throw new BizException("测试失败code" ,"测试失败信息");
         }
 
         return ResponseEntity.created(new URI("/show/exception" )).body(null);

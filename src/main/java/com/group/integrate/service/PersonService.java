@@ -11,6 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Pageable;
@@ -32,7 +33,7 @@ import java.util.List;
  */
 @Service
 @Slf4j
-@CacheConfig(cacheNames = "cacheName")
+@CacheConfig(cacheNames = "test")
 public class PersonService extends ServiceImpl<PersonMapper,Person> implements PersonServiceI{
 
     Logger log = LoggerFactory.getLogger("cons");

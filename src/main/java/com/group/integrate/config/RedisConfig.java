@@ -13,7 +13,9 @@ import org.springframework.cache.interceptor.KeyGenerator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.data.redis.cache.RedisCacheConfiguration;
 import org.springframework.data.redis.cache.RedisCacheManager;
+import org.springframework.data.redis.cache.RedisCacheWriter;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
@@ -23,6 +25,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
  
 import java.lang.reflect.Method;
 import java.time.Duration;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
  
@@ -59,19 +62,30 @@ public class RedisConfig extends CachingConfigurerSupport {
             }
          };
      }
+
+
     //缓存管理器
     @Bean
     public CacheManager cacheManager() {
-        RedisCacheManager.RedisCacheManagerBuilder builder = RedisCacheManager
-                .RedisCacheManagerBuilder
-                .fromConnectionFactory(jedisConnectionFactory);
-        Set<String> cacheNames = new HashSet<String>() {{
-            add("codeNameCache");
-            add("codeNameCache1");
-        }};
+//        RedisCacheManager.RedisCacheManagerBuilder builder = RedisCacheManager
+//                .RedisCacheManagerBuilder
+//                .fromConnectionFactory(jedisConnectionFactory);
+//        Set<String> cacheNames = new HashSet<String>() {{
+//            add("codeNameCache");
+//            add("codeNameCache1");
+//        }};
+//        builder.initialCacheNames(cacheNames);
+//      return  builder.build();
+        RedisCacheConfiguration defaultCacheConfig = RedisCacheConfiguration.defaultCacheConfig();
+        defaultCacheConfig.entryTtl(Duration.ofSeconds(30L));
+        defaultCacheConfig.disableCachingNullValues();
 
-        builder.initialCacheNames(cacheNames);
-        return builder.build();
+        RedisCacheManager cacheManager = RedisCacheManager.builder(RedisCacheWriter.lockingRedisCacheWriter(jedisConnectionFactory))
+                .cacheDefaults(defaultCacheConfig).withInitialCacheConfigurations(Collections.singletonMap
+                ("test", RedisCacheConfiguration.defaultCacheConfig().entryTtl(Duration.ofSeconds(120L)).disableCachingNullValues())
+        ).transactionAware().build();
+
+        return cacheManager;
     }
  
     /**
@@ -86,39 +100,24 @@ public class RedisConfig extends CachingConfigurerSupport {
         //配置redisTemplate
         RedisTemplate<String, Object> redisTemplate = new RedisTemplate<String, Object>();
         //设置序列化
-//        Jackson2JsonRedisSerializer jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer(Object.class);
-//        ObjectMapper om = new ObjectMapper();
-//        om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
-//        om.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
-//        jackson2JsonRedisSerializer.setObjectMapper(om);
-//        redisTemplate.setConnectionFactory(jedisConnectionFactory);
-//        RedisSerializer stringSerializer = new StringRedisSerializer();
-//        redisTemplate.setKeySerializer(stringSerializer);//key序列化
-//        redisTemplate.setValueSerializer(jackson2JsonRedisSerializer);//value序列化
-//        redisTemplate.setHashKeySerializer(stringSerializer);//Hash key序列化
-//        redisTemplate.setHashValueSerializer(jackson2JsonRedisSerializer);//Hash value序列化
-//        redisTemplate.afterPropertiesSet();
+        Jackson2JsonRedisSerializer jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer(Object.class);
+        ObjectMapper om = new ObjectMapper();
+        om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
+        om.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
+        jackson2JsonRedisSerializer.setObjectMapper(om);
         redisTemplate.setConnectionFactory(jedisConnectionFactory);
-        redisTemplate.setKeySerializer(new StringRedisSerializer());
-        redisTemplate.setValueSerializer(new JdkSerializationRedisSerializer());
-        redisTemplate.setHashValueSerializer(new JdkSerializationRedisSerializer());
-        redisTemplate.setHashKeySerializer(new StringRedisSerializer());
+        RedisSerializer stringSerializer = new StringRedisSerializer();
+        redisTemplate.setKeySerializer(stringSerializer);//key序列化
+        redisTemplate.setValueSerializer(jackson2JsonRedisSerializer);//value序列化
+        redisTemplate.setHashKeySerializer(stringSerializer);//Hash key序列化
+        redisTemplate.setHashValueSerializer(jackson2JsonRedisSerializer);//Hash value序列化
+        redisTemplate.afterPropertiesSet();
+        redisTemplate.setConnectionFactory(jedisConnectionFactory);
+//        redisTemplate.setKeySerializer(new StringRedisSerializer());
+//        redisTemplate.setValueSerializer(new JdkSerializationRedisSerializer());
+//        redisTemplate.setHashValueSerializer(new JdkSerializationRedisSerializer());
+//        redisTemplate.setHashKeySerializer(new StringRedisSerializer());
         return redisTemplate;
     }
 
-    @Bean
-    CacheProperties.Redis redis(){
-        CacheProperties.Redis redis = new CacheProperties.Redis();
-        redis.setTimeToLive(Duration.ofSeconds(20));
-        log.info("**************************");
-        return redis;
-    }
-//    @Bean
-//    CacheProperties cacheProperties(){
-//        CacheProperties.Redis redis = new CacheProperties.Redis();
-//        redis.setTimeToLive(Duration.ofSeconds(20));
-//        log.info("in cacheCacheProperties set time to live ");
-//        CacheProperties cacheProperties = new CacheProperties();
-//        cacheProperties.getRedis();
-//    }
 }

@@ -1,157 +1,30 @@
-2018-09-14 15:38:56.045  INFO 2648 --- [main] c.group.integrate.IntegrateApplication   : Starting IntegrateApplication on TangXinjing with PID 2648 (D:\workspace\skill\target\classes started by TangXinjing in D:\workspace\skill)
-2018-09-14 15:38:56.055 DEBUG 2648 --- [main] c.group.integrate.IntegrateApplication   : Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
-2018-09-14 15:38:56.058  INFO 2648 --- [main] c.group.integrate.IntegrateApplication   : No active profile set, falling back to default profiles: default
-2018-09-14 15:38:58.764  INFO 2648 --- [localhost-startStop-1] c.group.integrate.filter.SessionFilter   : --------------init------------
-2018-09-14 15:39:00.639 DEBUG 2648 --- [main] LiquibaseSchemaResolver                  : Found namespace details class liquibase.parser.core.xml.StandardNamespaceDetails for http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
-2018-09-14 15:39:00.640 DEBUG 2648 --- [main] LiquibaseSchemaResolver                  : Local path for http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd is liquibase/parser/core/xml/dbchangelog-3.4.xsd
-2018-09-14 15:39:00.641 DEBUG 2648 --- [main] LiquibaseSchemaResolver                  : Successfully loaded XSD from liquibase/parser/core/xml/dbchangelog-3.4.xsd
-2018-09-14 15:39:00.715 DEBUG 2648 --- [main] LiquibaseSchemaResolver                  : Found namespace details class liquibase.parser.core.xml.StandardNamespaceDetails for http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
-2018-09-14 15:39:00.716 DEBUG 2648 --- [main] LiquibaseSchemaResolver                  : Local path for http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd is liquibase/parser/core/xml/dbchangelog-3.4.xsd
-2018-09-14 15:39:00.717 DEBUG 2648 --- [main] LiquibaseSchemaResolver                  : Successfully loaded XSD from liquibase/parser/core/xml/dbchangelog-3.4.xsd
-2018-09-14 15:39:00.978  INFO 2648 --- [main] com.group.integrate.config.RedisConfig   : **************************
-2018-09-14 15:39:01.749 DEBUG 2648 --- [main] i.n.u.i.logging.InternalLoggerFactory    : Using SLF4J as the default logging framework
-2018-09-14 15:39:01.753 DEBUG 2648 --- [main] i.l.c.resource.DefaultClientResources    : -Dio.netty.eventLoopThreads: 4
-2018-09-14 15:39:01.804 DEBUG 2648 --- [main] io.netty.util.ResourceLeakDetector       : -Dio.netty.leakDetection.level: simple
-2018-09-14 15:39:01.804 DEBUG 2648 --- [main] io.netty.util.ResourceLeakDetector       : -Dio.netty.leakDetection.targetRecords: 4
-2018-09-14 15:39:01.809 DEBUG 2648 --- [main] i.netty.util.internal.PlatformDependent  : Platform: Windows
-2018-09-14 15:39:01.812 DEBUG 2648 --- [main] i.n.util.internal.PlatformDependent0     : -Dio.netty.noUnsafe: false
-2018-09-14 15:39:01.812 DEBUG 2648 --- [main] i.n.util.internal.PlatformDependent0     : Java version: 8
-2018-09-14 15:39:01.814 DEBUG 2648 --- [main] i.n.util.internal.PlatformDependent0     : sun.misc.Unsafe.theUnsafe: available
-2018-09-14 15:39:01.815 DEBUG 2648 --- [main] i.n.util.internal.PlatformDependent0     : sun.misc.Unsafe.copyMemory: available
-2018-09-14 15:39:01.816 DEBUG 2648 --- [main] i.n.util.internal.PlatformDependent0     : java.nio.Buffer.address: available
-2018-09-14 15:39:01.817 DEBUG 2648 --- [main] i.n.util.internal.PlatformDependent0     : direct buffer constructor: available
-2018-09-14 15:39:01.818 DEBUG 2648 --- [main] i.n.util.internal.PlatformDependent0     : java.nio.Bits.unaligned: available, true
-2018-09-14 15:39:01.819 DEBUG 2648 --- [main] i.n.util.internal.PlatformDependent0     : jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
-2018-09-14 15:39:01.819 DEBUG 2648 --- [main] i.n.util.internal.PlatformDependent0     : java.nio.DirectByteBuffer.<init>(long, int): available
-2018-09-14 15:39:01.819 DEBUG 2648 --- [main] i.netty.util.internal.PlatformDependent  : sun.misc.Unsafe: available
-2018-09-14 15:39:01.820 DEBUG 2648 --- [main] i.netty.util.internal.PlatformDependent  : -Dio.netty.tmpdir: C:\Users\TANGXI~1\AppData\Local\Temp (java.io.tmpdir)
-2018-09-14 15:39:01.821 DEBUG 2648 --- [main] i.netty.util.internal.PlatformDependent  : -Dio.netty.bitMode: 64 (sun.arch.data.model)
-2018-09-14 15:39:01.824 DEBUG 2648 --- [main] i.netty.util.internal.PlatformDependent  : -Dio.netty.noPreferDirect: false
-2018-09-14 15:39:01.824 DEBUG 2648 --- [main] i.netty.util.internal.PlatformDependent  : -Dio.netty.maxDirectMemory: 3793747968 bytes
-2018-09-14 15:39:01.824 DEBUG 2648 --- [main] i.netty.util.internal.PlatformDependent  : -Dio.netty.uninitializedArrayAllocationThreshold: -1
-2018-09-14 15:39:01.825 DEBUG 2648 --- [main] io.netty.util.internal.CleanerJava6      : java.nio.ByteBuffer.cleaner(): available
-2018-09-14 15:39:01.826 DEBUG 2648 --- [main] i.n.util.ResourceLeakDetectorFactory     : Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@900649e
-2018-09-14 15:39:01.831 DEBUG 2648 --- [main] i.netty.util.internal.PlatformDependent  : org.jctools-core.MpscChunkedArrayQueue: available
-2018-09-14 15:39:01.847 DEBUG 2648 --- [main] reactor.util.Loggers$LoggerFactory       : Using Slf4j logging framework
-2018-09-14 15:39:01.869 DEBUG 2648 --- [main] reactor.core.publisher.UnsafeSupport     : Starting UnsafeSupport init in Java 1.8
-2018-09-14 15:39:01.870 DEBUG 2648 --- [main] reactor.core.publisher.UnsafeSupport     : Unsafe is available
-2018-09-14 15:39:01.885 DEBUG 2648 --- [main] i.l.c.resource.DefaultClientResources    : LatencyUtils/HdrUtils are not available, metrics are disabled
-2018-09-14 15:39:02.370  INFO 2648 --- [main] c.group.integrate.IntegrateApplication   : Started IntegrateApplication in 8.017 seconds (JVM running for 9.874)
-2018-09-14 16:34:15.484  INFO 14728 --- [main] c.g.integrate.IntegrateApplicationTests  : Starting IntegrateApplicationTests on TangXinjing with PID 14728 (started by TangXinjing in D:\workspace\skill)
-2018-09-14 16:34:15.494 DEBUG 14728 --- [main] c.g.integrate.IntegrateApplicationTests  : Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
-2018-09-14 16:34:15.497  INFO 14728 --- [main] c.g.integrate.IntegrateApplicationTests  : No active profile set, falling back to default profiles: default
-2018-09-14 16:34:23.009 DEBUG 14728 --- [main] LiquibaseSchemaResolver                  : Found namespace details class liquibase.parser.core.xml.StandardNamespaceDetails for http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
-2018-09-14 16:34:23.010 DEBUG 14728 --- [main] LiquibaseSchemaResolver                  : Local path for http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd is liquibase/parser/core/xml/dbchangelog-3.4.xsd
-2018-09-14 16:34:23.016 DEBUG 14728 --- [main] LiquibaseSchemaResolver                  : Successfully loaded XSD from liquibase/parser/core/xml/dbchangelog-3.4.xsd
-2018-09-14 16:34:23.151 DEBUG 14728 --- [main] LiquibaseSchemaResolver                  : Found namespace details class liquibase.parser.core.xml.StandardNamespaceDetails for http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
-2018-09-14 16:34:23.152 DEBUG 14728 --- [main] LiquibaseSchemaResolver                  : Local path for http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd is liquibase/parser/core/xml/dbchangelog-3.4.xsd
-2018-09-14 16:34:23.154 DEBUG 14728 --- [main] LiquibaseSchemaResolver                  : Successfully loaded XSD from liquibase/parser/core/xml/dbchangelog-3.4.xsd
-2018-09-14 16:34:23.354  INFO 14728 --- [main] com.group.integrate.config.RedisConfig   : **************************
-2018-09-14 16:34:25.850 DEBUG 14728 --- [main] i.n.u.i.logging.InternalLoggerFactory    : Using SLF4J as the default logging framework
-2018-09-14 16:34:25.860 DEBUG 14728 --- [main] i.l.c.resource.DefaultClientResources    : -Dio.netty.eventLoopThreads: 4
-2018-09-14 16:34:25.934 DEBUG 14728 --- [main] io.netty.util.ResourceLeakDetector       : -Dio.netty.leakDetection.level: simple
-2018-09-14 16:34:25.936 DEBUG 14728 --- [main] io.netty.util.ResourceLeakDetector       : -Dio.netty.leakDetection.targetRecords: 4
-2018-09-14 16:34:25.969 DEBUG 14728 --- [main] i.netty.util.internal.PlatformDependent  : Platform: Windows
-2018-09-14 16:34:25.973 DEBUG 14728 --- [main] i.n.util.internal.PlatformDependent0     : -Dio.netty.noUnsafe: false
-2018-09-14 16:34:25.974 DEBUG 14728 --- [main] i.n.util.internal.PlatformDependent0     : Java version: 8
-2018-09-14 16:34:25.976 DEBUG 14728 --- [main] i.n.util.internal.PlatformDependent0     : sun.misc.Unsafe.theUnsafe: available
-2018-09-14 16:34:25.979 DEBUG 14728 --- [main] i.n.util.internal.PlatformDependent0     : sun.misc.Unsafe.copyMemory: available
-2018-09-14 16:34:25.980 DEBUG 14728 --- [main] i.n.util.internal.PlatformDependent0     : java.nio.Buffer.address: available
-2018-09-14 16:34:25.982 DEBUG 14728 --- [main] i.n.util.internal.PlatformDependent0     : direct buffer constructor: available
-2018-09-14 16:34:25.985 DEBUG 14728 --- [main] i.n.util.internal.PlatformDependent0     : java.nio.Bits.unaligned: available, true
-2018-09-14 16:34:25.986 DEBUG 14728 --- [main] i.n.util.internal.PlatformDependent0     : jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
-2018-09-14 16:34:25.986 DEBUG 14728 --- [main] i.n.util.internal.PlatformDependent0     : java.nio.DirectByteBuffer.<init>(long, int): available
-2018-09-14 16:34:25.987 DEBUG 14728 --- [main] i.netty.util.internal.PlatformDependent  : sun.misc.Unsafe: available
-2018-09-14 16:34:25.989 DEBUG 14728 --- [main] i.netty.util.internal.PlatformDependent  : -Dio.netty.tmpdir: C:\Users\TANGXI~1\AppData\Local\Temp (java.io.tmpdir)
-2018-09-14 16:34:25.990 DEBUG 14728 --- [main] i.netty.util.internal.PlatformDependent  : -Dio.netty.bitMode: 64 (sun.arch.data.model)
-2018-09-14 16:34:25.994 DEBUG 14728 --- [main] i.netty.util.internal.PlatformDependent  : -Dio.netty.noPreferDirect: false
-2018-09-14 16:34:25.995 DEBUG 14728 --- [main] i.netty.util.internal.PlatformDependent  : -Dio.netty.maxDirectMemory: 3793747968 bytes
-2018-09-14 16:34:25.996 DEBUG 14728 --- [main] i.netty.util.internal.PlatformDependent  : -Dio.netty.uninitializedArrayAllocationThreshold: -1
-2018-09-14 16:34:25.998 DEBUG 14728 --- [main] io.netty.util.internal.CleanerJava6      : java.nio.ByteBuffer.cleaner(): available
-2018-09-14 16:34:25.998 DEBUG 14728 --- [main] i.n.util.ResourceLeakDetectorFactory     : Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@8167f57
-2018-09-14 16:34:26.015 DEBUG 14728 --- [main] i.netty.util.internal.PlatformDependent  : org.jctools-core.MpscChunkedArrayQueue: available
-2018-09-14 16:34:26.034 DEBUG 14728 --- [main] reactor.util.Loggers$LoggerFactory       : Using Slf4j logging framework
-2018-09-14 16:34:26.118 DEBUG 14728 --- [main] reactor.core.publisher.UnsafeSupport     : Starting UnsafeSupport init in Java 1.8
-2018-09-14 16:34:26.120 DEBUG 14728 --- [main] reactor.core.publisher.UnsafeSupport     : Unsafe is available
-2018-09-14 16:34:26.139 DEBUG 14728 --- [main] i.l.c.resource.DefaultClientResources    : LatencyUtils/HdrUtils are not available, metrics are disabled
-2018-09-14 16:34:26.751  INFO 14728 --- [main] c.g.integrate.IntegrateApplicationTests  : Started IntegrateApplicationTests in 13.373 seconds (JVM running for 17.345)
-2018-09-14 16:36:42.491  INFO 12752 --- [main] c.g.integrate.IntegrateApplicationTests  : Starting IntegrateApplicationTests on TangXinjing with PID 12752 (started by TangXinjing in D:\workspace\skill)
-2018-09-14 16:36:42.498 DEBUG 12752 --- [main] c.g.integrate.IntegrateApplicationTests  : Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
-2018-09-14 16:36:42.501  INFO 12752 --- [main] c.g.integrate.IntegrateApplicationTests  : No active profile set, falling back to default profiles: default
-2018-09-14 16:36:49.191 DEBUG 12752 --- [main] LiquibaseSchemaResolver                  : Found namespace details class liquibase.parser.core.xml.StandardNamespaceDetails for http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
-2018-09-14 16:36:49.192 DEBUG 12752 --- [main] LiquibaseSchemaResolver                  : Local path for http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd is liquibase/parser/core/xml/dbchangelog-3.4.xsd
-2018-09-14 16:36:49.193 DEBUG 12752 --- [main] LiquibaseSchemaResolver                  : Successfully loaded XSD from liquibase/parser/core/xml/dbchangelog-3.4.xsd
-2018-09-14 16:36:49.294 DEBUG 12752 --- [main] LiquibaseSchemaResolver                  : Found namespace details class liquibase.parser.core.xml.StandardNamespaceDetails for http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
-2018-09-14 16:36:49.295 DEBUG 12752 --- [main] LiquibaseSchemaResolver                  : Local path for http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd is liquibase/parser/core/xml/dbchangelog-3.4.xsd
-2018-09-14 16:36:49.298 DEBUG 12752 --- [main] LiquibaseSchemaResolver                  : Successfully loaded XSD from liquibase/parser/core/xml/dbchangelog-3.4.xsd
-2018-09-14 16:36:49.494  INFO 12752 --- [main] com.group.integrate.config.RedisConfig   : **************************
-2018-09-14 16:36:52.020 DEBUG 12752 --- [main] i.n.u.i.logging.InternalLoggerFactory    : Using SLF4J as the default logging framework
-2018-09-14 16:36:52.027 DEBUG 12752 --- [main] i.l.c.resource.DefaultClientResources    : -Dio.netty.eventLoopThreads: 4
-2018-09-14 16:36:52.097 DEBUG 12752 --- [main] io.netty.util.ResourceLeakDetector       : -Dio.netty.leakDetection.level: simple
-2018-09-14 16:36:52.100 DEBUG 12752 --- [main] io.netty.util.ResourceLeakDetector       : -Dio.netty.leakDetection.targetRecords: 4
-2018-09-14 16:36:52.137 DEBUG 12752 --- [main] i.netty.util.internal.PlatformDependent  : Platform: Windows
-2018-09-14 16:36:52.140 DEBUG 12752 --- [main] i.n.util.internal.PlatformDependent0     : -Dio.netty.noUnsafe: false
-2018-09-14 16:36:52.141 DEBUG 12752 --- [main] i.n.util.internal.PlatformDependent0     : Java version: 8
-2018-09-14 16:36:52.144 DEBUG 12752 --- [main] i.n.util.internal.PlatformDependent0     : sun.misc.Unsafe.theUnsafe: available
-2018-09-14 16:36:52.148 DEBUG 12752 --- [main] i.n.util.internal.PlatformDependent0     : sun.misc.Unsafe.copyMemory: available
-2018-09-14 16:36:52.149 DEBUG 12752 --- [main] i.n.util.internal.PlatformDependent0     : java.nio.Buffer.address: available
-2018-09-14 16:36:52.151 DEBUG 12752 --- [main] i.n.util.internal.PlatformDependent0     : direct buffer constructor: available
-2018-09-14 16:36:52.153 DEBUG 12752 --- [main] i.n.util.internal.PlatformDependent0     : java.nio.Bits.unaligned: available, true
-2018-09-14 16:36:52.155 DEBUG 12752 --- [main] i.n.util.internal.PlatformDependent0     : jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
-2018-09-14 16:36:52.155 DEBUG 12752 --- [main] i.n.util.internal.PlatformDependent0     : java.nio.DirectByteBuffer.<init>(long, int): available
-2018-09-14 16:36:52.156 DEBUG 12752 --- [main] i.netty.util.internal.PlatformDependent  : sun.misc.Unsafe: available
-2018-09-14 16:36:52.157 DEBUG 12752 --- [main] i.netty.util.internal.PlatformDependent  : -Dio.netty.tmpdir: C:\Users\TANGXI~1\AppData\Local\Temp (java.io.tmpdir)
-2018-09-14 16:36:52.158 DEBUG 12752 --- [main] i.netty.util.internal.PlatformDependent  : -Dio.netty.bitMode: 64 (sun.arch.data.model)
-2018-09-14 16:36:52.161 DEBUG 12752 --- [main] i.netty.util.internal.PlatformDependent  : -Dio.netty.noPreferDirect: false
-2018-09-14 16:36:52.163 DEBUG 12752 --- [main] i.netty.util.internal.PlatformDependent  : -Dio.netty.maxDirectMemory: 3793747968 bytes
-2018-09-14 16:36:52.163 DEBUG 12752 --- [main] i.netty.util.internal.PlatformDependent  : -Dio.netty.uninitializedArrayAllocationThreshold: -1
-2018-09-14 16:36:52.166 DEBUG 12752 --- [main] io.netty.util.internal.CleanerJava6      : java.nio.ByteBuffer.cleaner(): available
-2018-09-14 16:36:52.167 DEBUG 12752 --- [main] i.n.util.ResourceLeakDetectorFactory     : Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@d5e3f55
-2018-09-14 16:36:52.186 DEBUG 12752 --- [main] i.netty.util.internal.PlatformDependent  : org.jctools-core.MpscChunkedArrayQueue: available
-2018-09-14 16:36:52.206 DEBUG 12752 --- [main] reactor.util.Loggers$LoggerFactory       : Using Slf4j logging framework
-2018-09-14 16:36:52.299 DEBUG 12752 --- [main] reactor.core.publisher.UnsafeSupport     : Starting UnsafeSupport init in Java 1.8
-2018-09-14 16:36:52.300 DEBUG 12752 --- [main] reactor.core.publisher.UnsafeSupport     : Unsafe is available
-2018-09-14 16:36:52.320 DEBUG 12752 --- [main] i.l.c.resource.DefaultClientResources    : LatencyUtils/HdrUtils are not available, metrics are disabled
-2018-09-14 16:36:53.293  INFO 12752 --- [main] c.g.integrate.IntegrateApplicationTests  : Started IntegrateApplicationTests in 12.824 seconds (JVM running for 39.295)
-2018-09-14 16:54:59.378 DEBUG 12752 --- [globalEventExecutor-2-1] i.n.u.internal.InternalThreadLocalMap    : -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
-2018-09-14 16:54:59.380 DEBUG 12752 --- [globalEventExecutor-2-1] i.n.u.internal.InternalThreadLocalMap    : -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
-2018-09-14 16:55:26.785  INFO 8168 --- [main] c.g.integrate.IntegrateApplicationTests  : Starting IntegrateApplicationTests on TangXinjing with PID 8168 (started by TangXinjing in D:\workspace\skill)
-2018-09-14 16:55:26.789 DEBUG 8168 --- [main] c.g.integrate.IntegrateApplicationTests  : Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
-2018-09-14 16:55:26.793  INFO 8168 --- [main] c.g.integrate.IntegrateApplicationTests  : No active profile set, falling back to default profiles: default
-2018-09-14 16:55:32.218 DEBUG 8168 --- [main] LiquibaseSchemaResolver                  : Found namespace details class liquibase.parser.core.xml.StandardNamespaceDetails for http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
-2018-09-14 16:55:32.219 DEBUG 8168 --- [main] LiquibaseSchemaResolver                  : Local path for http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd is liquibase/parser/core/xml/dbchangelog-3.4.xsd
-2018-09-14 16:55:32.220 DEBUG 8168 --- [main] LiquibaseSchemaResolver                  : Successfully loaded XSD from liquibase/parser/core/xml/dbchangelog-3.4.xsd
-2018-09-14 16:55:32.338 DEBUG 8168 --- [main] LiquibaseSchemaResolver                  : Found namespace details class liquibase.parser.core.xml.StandardNamespaceDetails for http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
-2018-09-14 16:55:32.338 DEBUG 8168 --- [main] LiquibaseSchemaResolver                  : Local path for http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd is liquibase/parser/core/xml/dbchangelog-3.4.xsd
-2018-09-14 16:55:32.341 DEBUG 8168 --- [main] LiquibaseSchemaResolver                  : Successfully loaded XSD from liquibase/parser/core/xml/dbchangelog-3.4.xsd
-2018-09-14 16:55:32.486  INFO 8168 --- [main] com.group.integrate.config.RedisConfig   : **************************
-2018-09-14 16:55:34.211 DEBUG 8168 --- [main] i.n.u.i.logging.InternalLoggerFactory    : Using SLF4J as the default logging framework
-2018-09-14 16:55:34.218 DEBUG 8168 --- [main] i.l.c.resource.DefaultClientResources    : -Dio.netty.eventLoopThreads: 4
-2018-09-14 16:55:34.281 DEBUG 8168 --- [main] io.netty.util.ResourceLeakDetector       : -Dio.netty.leakDetection.level: simple
-2018-09-14 16:55:34.282 DEBUG 8168 --- [main] io.netty.util.ResourceLeakDetector       : -Dio.netty.leakDetection.targetRecords: 4
-2018-09-14 16:55:34.313 DEBUG 8168 --- [main] i.netty.util.internal.PlatformDependent  : Platform: Windows
-2018-09-14 16:55:34.316 DEBUG 8168 --- [main] i.n.util.internal.PlatformDependent0     : -Dio.netty.noUnsafe: false
-2018-09-14 16:55:34.317 DEBUG 8168 --- [main] i.n.util.internal.PlatformDependent0     : Java version: 8
-2018-09-14 16:55:34.321 DEBUG 8168 --- [main] i.n.util.internal.PlatformDependent0     : sun.misc.Unsafe.theUnsafe: available
-2018-09-14 16:55:34.323 DEBUG 8168 --- [main] i.n.util.internal.PlatformDependent0     : sun.misc.Unsafe.copyMemory: available
-2018-09-14 16:55:34.324 DEBUG 8168 --- [main] i.n.util.internal.PlatformDependent0     : java.nio.Buffer.address: available
-2018-09-14 16:55:34.326 DEBUG 8168 --- [main] i.n.util.internal.PlatformDependent0     : direct buffer constructor: available
-2018-09-14 16:55:34.328 DEBUG 8168 --- [main] i.n.util.internal.PlatformDependent0     : java.nio.Bits.unaligned: available, true
-2018-09-14 16:55:34.328 DEBUG 8168 --- [main] i.n.util.internal.PlatformDependent0     : jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
-2018-09-14 16:55:34.329 DEBUG 8168 --- [main] i.n.util.internal.PlatformDependent0     : java.nio.DirectByteBuffer.<init>(long, int): available
-2018-09-14 16:55:34.329 DEBUG 8168 --- [main] i.netty.util.internal.PlatformDependent  : sun.misc.Unsafe: available
-2018-09-14 16:55:34.330 DEBUG 8168 --- [main] i.netty.util.internal.PlatformDependent  : -Dio.netty.tmpdir: C:\Users\TANGXI~1\AppData\Local\Temp (java.io.tmpdir)
-2018-09-14 16:55:34.331 DEBUG 8168 --- [main] i.netty.util.internal.PlatformDependent  : -Dio.netty.bitMode: 64 (sun.arch.data.model)
-2018-09-14 16:55:34.333 DEBUG 8168 --- [main] i.netty.util.internal.PlatformDependent  : -Dio.netty.noPreferDirect: false
-2018-09-14 16:55:34.334 DEBUG 8168 --- [main] i.netty.util.internal.PlatformDependent  : -Dio.netty.maxDirectMemory: 3793747968 bytes
-2018-09-14 16:55:34.334 DEBUG 8168 --- [main] i.netty.util.internal.PlatformDependent  : -Dio.netty.uninitializedArrayAllocationThreshold: -1
-2018-09-14 16:55:34.336 DEBUG 8168 --- [main] io.netty.util.internal.CleanerJava6      : java.nio.ByteBuffer.cleaner(): available
-2018-09-14 16:55:34.337 DEBUG 8168 --- [main] i.n.util.ResourceLeakDetectorFactory     : Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@65e92505
-2018-09-14 16:55:34.350 DEBUG 8168 --- [main] i.netty.util.internal.PlatformDependent  : org.jctools-core.MpscChunkedArrayQueue: available
-2018-09-14 16:55:34.368 DEBUG 8168 --- [main] reactor.util.Loggers$LoggerFactory       : Using Slf4j logging framework
-2018-09-14 16:55:34.409 DEBUG 8168 --- [main] reactor.core.publisher.UnsafeSupport     : Starting UnsafeSupport init in Java 1.8
-2018-09-14 16:55:34.409 DEBUG 8168 --- [main] reactor.core.publisher.UnsafeSupport     : Unsafe is available
-2018-09-14 16:55:34.437 DEBUG 8168 --- [main] i.l.c.resource.DefaultClientResources    : LatencyUtils/HdrUtils are not available, metrics are disabled
-2018-09-14 16:55:35.263  INFO 8168 --- [main] c.g.integrate.IntegrateApplicationTests  : Started IntegrateApplicationTests in 10.827 seconds (JVM running for 13.435)
-2018-09-14 16:57:12.538 DEBUG 8168 --- [globalEventExecutor-2-1] i.n.u.internal.InternalThreadLocalMap    : -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
-2018-09-14 16:57:12.543 DEBUG 8168 --- [globalEventExecutor-2-1] i.n.u.internal.InternalThreadLocalMap    : -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+2018-09-28 10:54:32.629  INFO 5276 --- [localhost-startStop-1] c.group.integrate.filter.SessionFilter   : --------------init------------
+2018-09-28 10:54:38.709 DEBUG 5276 --- [main] i.n.u.i.logging.InternalLoggerFactory    : Using SLF4J as the default logging framework
+2018-09-28 10:54:38.716 DEBUG 5276 --- [main] i.l.c.resource.DefaultClientResources    : -Dio.netty.eventLoopThreads: 4
+2018-09-28 10:54:38.808 DEBUG 5276 --- [main] io.netty.util.ResourceLeakDetector       : -Dio.netty.leakDetection.level: simple
+2018-09-28 10:54:38.809 DEBUG 5276 --- [main] io.netty.util.ResourceLeakDetector       : -Dio.netty.leakDetection.targetRecords: 4
+2018-09-28 10:54:38.820 DEBUG 5276 --- [main] i.netty.util.internal.PlatformDependent  : Platform: Windows
+2018-09-28 10:54:38.825 DEBUG 5276 --- [main] i.n.util.internal.PlatformDependent0     : -Dio.netty.noUnsafe: false
+2018-09-28 10:54:38.826 DEBUG 5276 --- [main] i.n.util.internal.PlatformDependent0     : Java version: 8
+2018-09-28 10:54:38.828 DEBUG 5276 --- [main] i.n.util.internal.PlatformDependent0     : sun.misc.Unsafe.theUnsafe: available
+2018-09-28 10:54:38.830 DEBUG 5276 --- [main] i.n.util.internal.PlatformDependent0     : sun.misc.Unsafe.copyMemory: available
+2018-09-28 10:54:38.832 DEBUG 5276 --- [main] i.n.util.internal.PlatformDependent0     : java.nio.Buffer.address: available
+2018-09-28 10:54:38.834 DEBUG 5276 --- [main] i.n.util.internal.PlatformDependent0     : direct buffer constructor: available
+2018-09-28 10:54:38.836 DEBUG 5276 --- [main] i.n.util.internal.PlatformDependent0     : java.nio.Bits.unaligned: available, true
+2018-09-28 10:54:38.837 DEBUG 5276 --- [main] i.n.util.internal.PlatformDependent0     : jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+2018-09-28 10:54:38.837 DEBUG 5276 --- [main] i.n.util.internal.PlatformDependent0     : java.nio.DirectByteBuffer.<init>(long, int): available
+2018-09-28 10:54:38.837 DEBUG 5276 --- [main] i.netty.util.internal.PlatformDependent  : sun.misc.Unsafe: available
+2018-09-28 10:54:38.839 DEBUG 5276 --- [main] i.netty.util.internal.PlatformDependent  : -Dio.netty.tmpdir: C:\Users\TANGXI~1\AppData\Local\Temp (java.io.tmpdir)
+2018-09-28 10:54:38.839 DEBUG 5276 --- [main] i.netty.util.internal.PlatformDependent  : -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2018-09-28 10:54:38.842 DEBUG 5276 --- [main] i.netty.util.internal.PlatformDependent  : -Dio.netty.noPreferDirect: false
+2018-09-28 10:54:38.843 DEBUG 5276 --- [main] i.netty.util.internal.PlatformDependent  : -Dio.netty.maxDirectMemory: 3793747968 bytes
+2018-09-28 10:54:38.844 DEBUG 5276 --- [main] i.netty.util.internal.PlatformDependent  : -Dio.netty.uninitializedArrayAllocationThreshold: -1
+2018-09-28 10:54:38.846 DEBUG 5276 --- [main] io.netty.util.internal.CleanerJava6      : java.nio.ByteBuffer.cleaner(): available
+2018-09-28 10:54:38.846 DEBUG 5276 --- [main] i.n.util.ResourceLeakDetectorFactory     : Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@42896fa1
+2018-09-28 10:54:38.852 DEBUG 5276 --- [main] i.netty.util.internal.PlatformDependent  : org.jctools-core.MpscChunkedArrayQueue: available
+2018-09-28 10:54:38.889 DEBUG 5276 --- [main] reactor.util.Loggers$LoggerFactory       : Using Slf4j logging framework
+2018-09-28 10:54:38.967 DEBUG 5276 --- [main] reactor.core.publisher.UnsafeSupport     : Starting UnsafeSupport init in Java 1.8
+2018-09-28 10:54:38.969 DEBUG 5276 --- [main] reactor.core.publisher.UnsafeSupport     : Unsafe is available
+2018-09-28 10:54:39.001 DEBUG 5276 --- [main] i.l.c.resource.DefaultClientResources    : LatencyUtils/HdrUtils are not available, metrics are disabled
+2018-09-28 10:55:32.367  INFO 5276 --- [http-nio-9091-exec-4] c.g.i.interceptor.TestInterceptor        : ---------------------开始进入请求地址拦截----------------------------
+2018-09-28 10:55:32.464 DEBUG 5276 --- [http-nio-9091-exec-4] c.group.integrate.aspect.ResourceAspect  : REQUEST BEGIN.......: GET   /show/exception , args=[true] 
